@@ -1,0 +1,181 @@
+@import "variables";
+@import "mixins";
+.section-owns {
+  position: relative;
+  min-width: 320px;
+  height: auto;
+  text-align: center;
+  &__title {
+    color: $violetColor;
+    font-weight: 700;
+    font-size: 32px;
+    line-height: 38px;
+  }
+  &__title--desktop{
+    display: none;
+    color: $violetColor;
+    font-weight: 700;
+  }
+  &__grid {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    row-gap: 37px;
+    margin-top: 36px;
+  }
+  &__element{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-weight: 400;
+    &--title{
+      color: $middleGreyColor;
+      font-size: 16px;
+      line-height: 16px;
+      margin-top: 23px;
+      margin-bottom: 14px;
+    }
+    &--description{
+      @include latoNormal;
+      color: $lightGreyColor;
+      font-size: 14px;
+      line-height: 21px;
+    }
+  }
+  &__description{
+  }
+  @media (min-width: 320px) and (max-width: 480px) {
+    &__title{
+    }
+    &__grid{
+      max-width: 480px;
+    }
+    &__element{
+    }
+  }
+  @media (min-width: 481px) and (max-width: 992px){
+    &__title{
+      text-align: center;
+      font-size: 42px;
+      line-height: 44px;
+    }
+    &__title--desktop{
+      display: none;
+    }
+    &__grid{
+      max-width: 992px;
+      row-gap: 59px;
+      margin-top: 52px;
+      margin-bottom: 73px;
+    }
+    &__element{
+      display: grid;
+      grid-template-columns: 1fr 5fr;
+      column-gap: 8px;
+      &--title{
+        line-height: 21px;
+        margin: 0 0 16px 0;
+      }
+      &--description{
+      }
+    }
+    &__description{
+      align-self: start;
+      text-align: start;
+      padding-right: 20px;
+    }
+  }
+  @media (min-width: 993px){
+    background: #F4F4F4;
+    &--desktop{
+      display: grid;
+      grid-template-columns: 50% 50%;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    &__title{
+      display: none;
+      font-size: 48px;
+      line-height: 50px;
+      position: absolute;
+      top: 94px;
+      left: 50%;
+      width: 50%;
+      text-align: start;
+    }
+    &__title--desktop{
+      display: block;
+      font-size: 48px;
+      line-height: 50px;
+      text-align: center;
+      padding-left: 15px;
+      margin-top: 36px;
+    }
+    &__grid{
+      row-gap: 32px;
+      width: 100%;
+      margin-bottom: 36px;
+    }
+    &__element{
+      display: grid;
+      grid-template-columns: 1fr 5fr;
+      column-gap: 8%;
+      &--title{
+        line-height: 21px;
+        margin: 0 0 16px 0;
+      }
+      img {
+        align-self: start;
+      }
+    }
+    &__description{
+      align-self: start;
+      text-align: start;
+      padding-right: 20px;
+    }
+  }
+}
+.container-owns{
+  min-width: 320px;
+  padding: 32px 22px 58px 21px;
+  @media (min-width: 320px) and (max-width: 480px) {
+    max-width: 480px;
+  }
+  @media (min-width: 481px) and (max-width: 992px){
+    max-width: 992px;
+    padding: 62px 5px 0 30px;
+  }
+  @media (min-width: 993px){
+    max-width: 1200px;
+    padding-top: 100px;
+    padding-bottom: 33px;
+    padding-left: 65px;
+    margin: 0 auto;
+  }
+}
+.section-owns__container {
+  padding: 0 0 6px 3px;
+  @media (min-width: 481px) and (max-width: 992px){
+    padding-left: 68px;
+  }
+  @media (min-width: 993px){
+    padding: 100px 0 33px;
+  }
+}
+.section-owns__container--imgCode {
+  display: inline-block;
+  width: 100%;
+  height: 381px;
+  background-image: url("../images/owns/mobile.png");
+  background-size: 100% 100%;
+  @media (min-width: 481px) and (max-width: 992px){
+    background-image: url("../images/owns/tablet.png");
+    background-size: 100% 100%;
+    height: 519px;
+  }
+  @media (min-width: 993px){
+    background-image: url("../images/owns/desktop.png");
+    background-size: 100% 100%;
+    width: 100%;
+    height: 519px;
+  }
+}

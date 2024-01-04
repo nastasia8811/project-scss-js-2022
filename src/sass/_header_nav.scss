@@ -1,0 +1,399 @@
+@use "mixins";
+@use "variables";
+
+.header__background {
+  position: relative;
+  background-image: url("../images/header/navigationHeader/background_header.png");
+  background-size: cover;
+  background-position: center center;
+  width: 100%;
+  min-width: 320px;
+
+  &-navigation {
+    padding: 32px 10px;
+    display: flex;
+    justify-content: space-between;
+    align-content: center;
+    background: variables.$darkGreyColor;
+
+    &_container {
+      @include mixins.flex-row;
+      cursor: pointer;
+
+
+      &-iconWhite {
+        display: none;
+      }
+
+      &-forkio {
+        display: none;
+      }
+    }
+
+    &_menu {
+      position: absolute;
+      background: variables.$backgroundColor;
+      right: 0;
+      width: 100%;
+      margin-top: 73px;
+
+
+      &-item {
+        position: relative;
+        cursor: pointer;
+        color: variables.$whiteColor;
+        padding-left: 35px;
+        min-width: 291.9px;
+        border-bottom: solid 1px variables.$borderGrey;
+        padding-top: 29px;
+        padding-bottom: 21px;
+        font-weight: 400;
+        font-size: 26px;
+        line-height: 26px;
+
+        &:focus,
+        &:hover {
+          color: variables.$violetColor;
+
+          &::after {
+            position: absolute;
+            top: 12px;
+            left: 2px;
+            content: "";
+            min-height: 53px;
+            border-left: solid 8px variables.$violetColor;
+          }
+        }
+
+        &:last-child {
+          padding-top: 7px;
+          padding-bottom: 7px;
+          &:focus,
+          &:hover {
+            &::after {
+              display: none;
+            }
+          }
+        }
+      }
+    }
+
+    &_button {
+      min-width: 119px;
+      @include mixins.font-size;
+      @include mixins.button-violet;
+      cursor: pointer;
+    }
+
+    &_bar {
+      cursor: pointer;
+      position: relative;
+
+      &-cross {
+        display: none;
+      }
+    }
+  }
+
+  &-title {
+    padding: 50px 10px 19px 10px;
+    justify-items: center;
+    text-align: center;
+    font-weight: 700;
+    font-size: 48px;
+    line-height: 48px;
+    color: variables.$whiteColor;
+  }
+
+  &-slogan {
+    padding-right: 10px;
+    padding-left: 10px;
+    text-align: center;
+    justify-items: center;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 24px;
+    color: variables.$violetColor;
+  }
+
+  &-link {
+    padding: 14px 10px 395px 10px;
+    width: 100%;
+    text-align: center;
+    justify-items: center;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 14px;
+    color: variables.$whiteColor;
+  }
+
+  &-container {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    bottom: -50px;
+    left: 10px;
+    right: 10px;
+
+    &_download {
+      @include mixins.button-violet;
+      padding: 13px 10px;
+      font-weight: 700;
+      font-size: 18px;
+      line-height: 20px;
+      cursor: pointer;
+    }
+
+    &_span {
+      padding-top: 12.5px;
+      //padding-bottom: 79.5px;
+      color: variables.$lightGreyColor;
+      font-weight: 400;
+      font-size: 14px;
+      line-height: 14px;
+    }
+  }
+
+  @media (min-width: 481px) and (max-width: 992px) {
+    .header__background {
+      max-width: 992px;
+
+      &-navigation {
+        padding: 24px 10px 18px 10px;
+
+        &_container {
+          margin-bottom: 55px;
+          align-items: center;
+
+          &-forkio {
+            margin-left: 17px;
+            display: block;
+            text-transform: uppercase;
+            font-size: 24px;
+            @include mixins.font;
+            color: variables.$violetColor;
+          }
+        }
+
+        &_menu {
+          margin-top: 0;
+          padding-top: 85px;
+          background: none;
+          display: flex;
+          justify-content: space-evenly;
+          padding-right: 50px;
+          padding-left: 60px;
+
+          &-item {
+            margin-right: 0;
+            border-bottom: none;
+            padding: 0;
+            min-width: 0;
+            color: variables.$violetColor;
+            font-weight: 700;
+            font-size: 16px;
+            line-height: 18px;
+
+            &:focus,
+            &:hover {
+              border-left: none;
+              color: variables.$violetColor;
+
+              &::after {
+                display: none;
+                top: 0;
+                left: 0;
+                content: "";
+                min-height: 0;
+                border-left: none;
+              }
+            }
+
+            &:nth-child(4) {
+              margin-left: 0;
+            }
+
+            &:last-child {
+              display: none;
+            }
+          }
+        }
+
+        &_button {
+          min-width: 145px;
+          line-height: 16px;
+          margin-bottom: 56px;
+        }
+
+        &_bar {
+          display: none;
+        }
+      }
+
+      &-title {
+        padding-top: 69px;
+        text-align: center;
+        font-weight: 700;
+        font-size: 72px;
+        line-height: 72px;
+        color: variables.$whiteColor;
+      }
+
+      &-slogan {
+        font-size: 24px;
+        line-height: 24px;
+      }
+
+      &-link {
+        padding: 19px 150px 439px 150px;
+      }
+
+      &-container {
+        position: absolute;
+        bottom: -60px;
+
+        &_download {
+          //@include mixins.button-violet;
+          padding: 23px 61px;
+          font-size: 21px;
+          line-height: 23px;
+
+        }
+      }
+    }
+  }
+
+  @media (min-width: 993px)  {
+    //and (max-width: 1200px)
+    .header__background {
+
+      &-navigation {
+        margin: 0 auto;
+        max-width: 1200px;
+        background: none;
+        padding-right: 90px;
+        padding-left: 90px;
+
+        &_container {
+          margin-bottom: 0;
+          align-items: center;
+
+          &:hover{
+            .header__background-navigation_container-iconWhite {
+              display: block;
+            }
+            .header__background-navigation_container-icon {
+              display: none;
+            }
+            .header__background-navigation_container-forkio {
+              color: variables.$whiteColor;
+            }
+          }
+
+          &-forkio {
+            margin-left: 17px;
+            display: block;
+            text-transform: uppercase;
+            font-size: 24px;
+            @include mixins.font;
+            color: variables.$violetColor;
+          }
+        }
+
+        &_menu {
+          margin-top: 0;
+          position: sticky;
+          background: none;
+          display: flex;
+          flex-direction: row;
+          justify-content: flex-end;
+
+          &-item {
+            color: variables.$violetColor;
+            border-bottom: none;
+            min-width: 0;
+            font-weight: 700;
+            font-size: 16px;
+            line-height: 18px;
+
+            &:hover {
+              color: variables.$whiteColor;
+
+              &::after {
+                display: none;
+              }
+            }
+
+            &:last-child {
+              display: none;
+            }
+
+            &:nth-child(4) {
+              padding-right: 40px;
+            }
+          }
+        }
+
+        &_button {
+          min-width: 145px;
+          line-height: 16px;
+          margin-top: 15px;
+          margin-bottom: 10px;
+          padding: 0;
+
+          &:hover {
+            color: variables.$violetColor;
+            background: variables.$whiteColor;
+          }
+        }
+
+        &_bar {
+          display: none;
+        }
+      }
+
+      &-title {
+        text-align: center;
+        font-weight: 700;
+        font-size: 72px;
+        line-height: 72px;
+        color: variables.$whiteColor;
+      }
+
+      &-slogan {
+        font-size: 24px;
+        line-height: 24px;
+      }
+
+      &-container {
+        position: absolute;
+        bottom: -60px;
+
+
+        &_download {
+          line-height: 22px;
+          padding: 23px 61px;
+
+          &:hover {
+            border: 2px solid variables.$violetColor;
+            color: variables.$violetColor;
+            background: variables.$whiteColor;
+          }
+        }
+      }
+    }
+  }
+}
+
+
+
+
+
+.hide {
+  display: none;
+}
+
+.active {
+  display: block;
+}

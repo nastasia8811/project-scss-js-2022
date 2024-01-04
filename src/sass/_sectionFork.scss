@@ -1,0 +1,114 @@
+@use "mixins";
+@use "variables";
+
+.section-fork {
+  background-image: url("../images/fork/background.png");
+  background-size: cover;
+  min-width: 320px;
+  background-position: center center;
+  width: 100%;
+  //margin: 0 auto;
+  @include mixins.padding;
+  background-color: variables.$backgroundPrice;
+
+  &__title {
+    padding-top: 63px;
+    padding-bottom: 53px;
+    text-align: center;
+    font-weight: 700;
+    font-size: 36px;
+    line-height: 48px;
+    color: variables.$whiteColor;
+  }
+
+  &__grid-container {
+    text-align: center;
+
+    &_item {
+      cursor: pointer;
+      //margin: auto;
+      padding-bottom: 45px;
+
+      &-img {
+        padding-bottom: 30px;
+      }
+
+      &-text {
+        color: variables.$whiteColor;
+        @include mixins.lato;
+        font-weight: 700;
+        font-size: 16px;
+        line-height: 24px;
+      }
+    }
+  }
+
+  &__paragraph {
+    @include mixins.lato;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 21px;
+    color: variables.$lightPurple;
+    text-align: justify;
+    padding-bottom: 25px;
+    font-style: normal;
+  }
+
+  @media (min-width: 481px) and (max-width: 992px) {
+    .section-fork {
+      padding-left: 0;
+      padding-right: 0;
+
+      &__title {
+        padding-top: 87px;
+        padding-bottom: 88px;
+        font-size: 42px;
+        line-height: 44px;
+      }
+
+      &__grid-container {
+        display: grid;
+        grid-auto-flow: row;
+        grid-template-rows:  1fr 1fr 1fr;
+        grid-template-columns: 1fr 1fr;
+        grid-row-gap: 55px;
+        grid-column-gap: 50px;
+
+        &_item {
+          margin-bottom: 0;
+        }
+      }
+
+      &__paragraph {
+        text-align: center;
+        padding-bottom: 19px;
+        padding-top: 68px;
+      }
+    }
+  }
+
+  @media (min-width: 993px) {
+    //and (max-width: 1200px)
+    &__title {
+      padding-top: 108px;
+      padding-bottom: 81px;
+      font-size: 48px;
+      line-height: 50px;
+    }
+
+    &__grid-container {
+      margin: 0 auto;
+      max-width: 1200px;
+      display: grid;
+      grid-template-rows:  1fr 1fr;
+      grid-template-columns: 1fr 1fr 1fr;
+      grid-row-gap: 100px;
+      grid-column-gap: 80px;
+    }
+
+    &__paragraph {
+      text-align: center;
+      padding: 118px 200px 18px 200px;
+    }
+  }
+}

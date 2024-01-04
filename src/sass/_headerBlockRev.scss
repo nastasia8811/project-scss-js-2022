@@ -1,0 +1,145 @@
+@import "variables";
+@import "mixins";
+
+.container-editor {
+  display: flex;
+  flex-direction: column;
+  margin-top: 138px;
+  margin-bottom: 88px;
+  padding-top: 8px;
+  padding-right: 24px;
+  padding-left: 23px;
+  min-width: 320px;
+  text-align: center;
+  @media (min-width: 320px) and (max-width: 480px) {
+    max-width: 480px;
+  }
+  @media (min-width: 481px) and (max-width: 992px) {
+    max-width: 992px;
+    margin-top: 182px;
+    margin-bottom: 98px;
+    padding-top: 0;
+    padding-right: 40px;
+    padding-left: 39px;
+  }
+  @media (min-width: 993px) {
+    max-width: 1200px;
+    margin: 160px auto 70px;
+    padding: 0 135px;
+  }
+  &--title{
+    font-weight: 700;
+    color: $middleVioletColor;
+    text-transform: uppercase;
+    @media (max-width: 480px) {
+      font-size: 26px;
+      line-height: 28px;
+      margin-bottom: 27px;
+    }
+    @media (min-width: 481px) and (max-width: 992px) {
+      font-size: 42px;
+      line-height: 42px;
+      margin-bottom: 33px;
+    }
+    @media (min-width: 993px) {
+      font-size: 54px;
+      line-height: 54px;
+      margin-bottom: 35px;
+    }
+  }
+  &--description {
+    padding-bottom: 36px;
+    color: $middleGreyColor;
+    font-weight: 400;
+    @include latoNormal;
+    @media (max-width: 480px) {
+      font-size: 14px;
+      line-height: 20px;
+    }
+    @media (min-width: 481px) and (max-width: 992px) {
+      padding-bottom: 24px;
+      font-size: 21px;
+      line-height: 32px;
+    }
+    @media (min-width: 993px) {
+      padding-bottom: 13px;
+      font-size: 21px;
+      line-height: 32px;
+    }
+  }
+}
+.gitInfo {
+  @include flexRow-style;
+  flex-wrap: wrap;
+  width: 100%;
+  margin: 0 auto;
+  &-watch {
+    @include flexRow-style;
+    width: 123px;
+    height: 26px;
+  }
+  &-star {
+    @include flexRow-style;
+    width: 112px;
+    height: 26px;
+    &__elemcount {
+      padding-left: 3px;
+      padding-right: 3px;
+    }
+  }
+  &-fork {
+    @include flexRow-style;
+    width: 109px;
+    height: 26px;
+  }
+  @media (min-width: 481px) and (max-width: 992px){
+    flex-wrap: nowrap;
+  }
+  @media (min-width: 993px){
+    flex-wrap: nowrap;
+  }
+}
+
+.butt_hov {
+  cursor: pointer;
+  @include flexRow-style;
+  color: #24292e;
+  font-size: 12px;
+  width: 70%;
+  height: 100%;
+  font-weight: 700;
+  line-height: 20px;
+  border: 1px solid #dedede;
+  border-top-left-radius: 3px;
+  border-bottom-left-radius: 3px;
+  background-image: linear-gradient(-180deg, #fafbfc, #eff3f6 90%);
+}
+.gitInfo__elem {
+  margin: 10px 5px;
+}
+
+.butt_hov:hover {
+  border-color: #bfc1c3;
+  background-image: linear-gradient(#e1e4e8, #e1e4e8 100%);
+}
+.elem_hov {
+  width: 44px;
+  height: 100%;
+  font-size: 12px;
+  line-height: 26px;
+  font-weight: 700;
+  text-align: center;
+  border: 1px solid #dedede;
+  border-left: none;
+  border-top-right-radius: 3px;
+  border-bottom-right-radius: 3px;
+  cursor: pointer;
+}
+.elem_hov:hover {
+  color: #2675c3;
+}
+
+.svgElem {
+  display: inline-block;
+  margin-right: 5px;
+}

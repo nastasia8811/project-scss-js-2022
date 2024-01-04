@@ -1,0 +1,123 @@
+@use "mixins";
+@use "variables";
+
+.section-price{
+  background: variables.$backgroundPrice;
+  min-width: 320px;
+  height: auto;
+  color: variables.$whiteColor;
+  text-align: center;
+  &__title{
+    width: 100%;
+    font-weight: 700;
+    font-size: 28px;
+    line-height: 35px;
+    padding-top: 23px;
+    padding-bottom: 32px;
+  }
+  &__table{
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr 1.23fr 1fr;
+    row-gap: 18px;
+    & div:first-child{
+      button {
+        margin-top: 0;
+        margin-bottom: 67px;
+      }
+    }
+    & div:last-child{
+      margin-bottom: 15px;
+    }
+  }
+  &__item{
+    background: rgba(255,255,255,0.11);
+    margin: 0 22px;
+    font-weight: 400;
+    &--name{
+      background: rgba(255,255,255,0.06);
+      text-transform: uppercase;
+      font-size: 7.5vw;
+      line-height: 7.5vw;
+      padding: 11.25vw 9.34vw;
+    }
+    &--price{
+      font-size: 60px;
+      line-height: 19.37vw;
+      text-transform: uppercase;
+      margin-top: 9.37vw;
+      font-weight: 700;
+      & span{
+        font-weight: 400;
+      }
+    }
+    &--period{
+      display: inline-block;
+      position: relative;
+      font-size: 14px;
+      line-height: 18px;
+      text-transform: uppercase;
+      margin-top: 20px;
+      text-align: center;
+      &:after{
+        position: absolute;
+        content: "";
+        width: 60px;
+        height: 5px;
+        background: variables.$violetColor;
+        top: 56px;
+        left: 20%;
+      }
+    }
+    &--description{
+      line-height: 28px;
+      margin-top: 73px;
+      margin-bottom: 37px;
+      padding-left: 25px;
+      padding-right: 25px;
+    }
+    &--active{
+      background: rgba(70,48,72,0.84);
+      & p:nth-child(1){
+        background: rgba(0,0,0,0.11);
+        padding: 13.4vw 30.3vw;
+      }
+      & p:nth-child(2){
+        margin-top: 14px;
+        font-size: 82px;
+        line-height: 84px;
+      }
+      & p:nth-child(3){
+        margin-top: 16px;
+        &:after{
+          top: 62px;
+        }
+      }
+      & p:nth-child(4){
+        line-height: 32px;
+        margin-top: 91px;
+        margin-bottom: 83px;
+        padding-left: 60px;
+        padding-right: 60px;
+      }
+    }
+  }
+}
+
+.container-price{
+  min-width: 320px;
+  position: relative;
+  text-align: center;
+  &:before{
+    content: "";
+    position: absolute;
+    width: 76%;
+    height: 2px;
+    background: #645766;
+    top: 7px;
+    left: 12%;
+  }
+  @media (min-width: 320px) and (max-width: 480px) {
+    max-width: 480px;
+  }
+}

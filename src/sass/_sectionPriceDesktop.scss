@@ -1,0 +1,104 @@
+@use "mixins";
+@use "variables";
+@import "variables";
+
+.section-price{
+  @media (min-width: 993px){
+    background: url("../images/price/pricebackground.png");
+    background-size: cover;
+    &__title{
+      font-size: 3.47vw;
+      line-height: 3.6vw;
+      padding-top: 9.2vw;
+      padding-bottom: 4.4vw;
+    }
+    &__table{
+      display: grid;
+      grid-template-columns: 1fr 1fr 1.16fr 1fr;
+      grid-template-rows: auto;
+      align-items: center;
+      column-gap: 15px;
+      & div:first-child{
+        button {
+          margin-top: 18px;
+          margin-bottom: 39px;
+        }
+      }
+      & div:last-child{
+        margin-bottom: 0;
+      }
+    }
+    &__item{
+      background: rgba(255,255,255,0.11);
+      margin: 0;
+      &--name{
+        font-size: 1.74vw;
+        line-height: 1.74vw;
+        padding: 36px 30px;
+      }
+      &--price{
+        font-size: 60px;
+        line-height: 4.52vw;
+        margin-top: 2.17vw;
+      }
+      &--period{
+        display: inline-block;
+        position: relative;
+        font-size: 14px;
+        line-height: 16px;
+        &:after{
+          position: absolute;
+          content: "";
+          width: 60px;
+          height: 5px;
+          background: variables.$violetColor;
+          top: 56px;
+          left: 20%;
+        }
+      }
+      &--description{
+        line-height: 18px;
+        margin-top: 79px;
+        margin-bottom: 37px;
+        padding-left: 5px;
+        padding-right: 5px;
+      }
+      &--active{
+        min-height: 40.57vw;
+        min-width: 21.66vw;
+        & p:nth-child(1){
+          padding: 3.11vw 6.95vw;
+        }
+        & p:nth-child(2){
+          margin-top: 14px;
+          line-height: 84px;
+        }
+        & p:nth-child(3){
+          margin-top: 16px;
+          &:after{
+            top: 62px;
+          }
+        }
+        & p:nth-child(4){
+          line-height: 18px;
+          margin-top: 91px;
+          margin-bottom: 83px;
+          padding-left: 30px;
+          padding-right: 30px;
+        }
+      }
+    }
+  }
+}
+
+.container-price{
+  @media (min-width: 993px){
+    max-width: variables.$widthDesktop;
+    padding: 0 calc(43px/($widthDesktop + 180px)*100%) calc(97px/($widthDesktop + 180px)*100%);
+    &:before{
+      width: calc(780px/($widthDesktop)*100%);
+      top: 15px;
+      left: 17.5%;
+    }
+  }
+}

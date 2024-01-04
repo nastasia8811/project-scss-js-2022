@@ -1,0 +1,71 @@
+@use "variables";
+@mixin imageBlock {
+  max-width: 100%;
+  max-height: 100%;
+  display: block;
+}
+
+@mixin flex-row {
+  display: flex;
+  flex-direction: row;
+}
+@mixin font {
+  font-weight: 700;
+  line-height: 16px;
+}
+
+@mixin font-size {
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 17px;
+}
+
+@mixin button-violet {
+  background: variables.$violetColor;
+  color: variables.$whiteColor;
+  border-radius: 40px;
+}
+
+@mixin button-price {
+  background: rgba(255, 255, 255, 0.15);
+  color: variables.$whiteColor;
+  border-radius: 40px;
+  font-weight: 400;
+  text-transform: uppercase;
+}
+
+@mixin fontTitleTablet {
+  font-weight: 700;
+  font-size: 42px;
+  line-height: 44px;
+  color: variables.$whiteColor;
+}
+
+@mixin fontTitleDesktop {
+  font-weight: 700;
+  font-size: 48px;
+  line-height: 50px;
+  color: variables.$whiteColor;
+}
+
+@mixin lato {
+  font-family: 'Lato', sans-serif;
+  font-style: italic;
+}
+
+@mixin latoNormal {
+  font-family: 'Lato', sans-serif;
+  font-style: normal;
+}
+
+@mixin padding {
+  padding-left: 25px;
+  padding-right: 25px;
+}
+
+@mixin flexRow-style {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  //flex-direction: row;
+}
